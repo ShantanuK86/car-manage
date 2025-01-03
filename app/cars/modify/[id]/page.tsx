@@ -64,21 +64,6 @@ export default function CarDetailsPage({
     }
   };
 
-  const handleDelete = async () => {
-    if (car) {
-      setIsLoading(true);
-      try {
-        await axios.delete(`/api/cars/${id}`); 
-        alert('Car deleted successfully!');
-      } catch (error) {
-        console.error('Failed to delete car', error);
-        alert('Failed to delete car');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
   if (!car) return <div>Loading...</div>;
 
   return (
@@ -91,9 +76,6 @@ export default function CarDetailsPage({
           <>
             <Button onClick={handleEdit} >
               Edit
-            </Button>
-            <Button onClick={handleDelete} variant="destructive" disabled={isLoading}>
-              {isLoading ? 'Deleting...' : 'Delete'}
             </Button>
           </>
         )}

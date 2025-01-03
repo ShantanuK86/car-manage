@@ -10,8 +10,6 @@
 
 ## ✨ Features
 
-<img align="right" width="300" src="https://placehold.co/300x200?text=Features+Demo">
-
 🔐 **Secure Authentication**
 - User signup/login
 - Protected routes

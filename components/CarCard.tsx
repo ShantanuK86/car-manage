@@ -14,7 +14,7 @@ interface CarCardProps {
 
 const CarCard = ({ car, onEdit, onDelete,onClick }: CarCardProps) => {
   return (
-    <Card onClick={()=>onClick(car)} className="w-full max-w-sm hover:shadow-lg transition-shadow">
+    <Card className="w-full max-w-sm hover:shadow-lg transition-shadow">
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
           <span className="truncate">{car.title}</span>
@@ -37,7 +37,7 @@ const CarCard = ({ car, onEdit, onDelete,onClick }: CarCardProps) => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="aspect-video relative mb-4">
+      <div onClick={()=>onClick(car)} className="aspect-video relative mb-4">
           <img
             src={car.images[0] || "/api/placeholder/400/300"}
             alt={car.title}
